@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require("helmet");
 const cors = require('cors');
 const tarefasRouter = require('./controllers/TarefaController');
 const areasRouter = require('./controllers/areaController');
@@ -14,7 +15,8 @@ const app = express();
 app.use(express.json());
 
 // Habilita o CORS para permitir requisições de diferentes origens.
-app.use(cors());
+app.use(helmet());
+//app.use(cors());
 
 // Define a rota "/tarefas" e associa ao router importado.
 app.use("/tarefas", tarefasRouter);
