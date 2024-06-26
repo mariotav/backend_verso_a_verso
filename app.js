@@ -18,7 +18,7 @@ app.use(express.json());
 
 // Habilita o CORS para permitir requisições de diferentes origens.
 app.use(helmet());
-//app.use(cors());
+app.use(cors());
 
 // Define a rota "/tarefas" e associa ao router importado.
 app.use("/login", loginRouter);
