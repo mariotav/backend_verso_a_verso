@@ -26,7 +26,7 @@ function executarConsulta(sql, params, res, erroMsg) {
 router.get('/:idDisciplina', (req, res) => {
     let disciplina = req.params.idDisciplina;
 
-    executarConsulta('SELECT * FROM formula where disciplina_id = ?', [disciplina], res, "Erro na consulta de formula");
+    executarConsulta('SELECT * FROM formula where disciplinas_id = ?', [disciplina], res, "Erro na consulta de formula");
 });
 
 
@@ -64,8 +64,6 @@ router.put('/', (req, res) => {
     const { id, nome, disciplinas_id } = req.body;
     executarConsulta('UPDATE formula SET nome = ?, disciplinas_id = ? WHERE id = ?', [id, nome, disciplinas_id,], res, "Erro ao atualizar formula");
 });
-
-
 
 
 module.exports = router;
